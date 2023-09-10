@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Music Player..</title>
+    <link rel="shortcut icon" href="Music.png.ico" type="image/x-icon">
+    <style>
+        /* CSS for styling the player and playlist */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .music-player {
+            text-align: center;
+            margin-top: 20px;
+        }
+        audio {
+            width: 100%;
+            max-width: 400px;
+        }
+        .playlist {
+            text-align: left;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 5px 0;
+        }
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+        a:hover {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Music Player</h1>
+
+    <!-- Music Player -->
+    <div class="music-player">
+        <audio id="audio" controls>
+            <source src="" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <!-- Playlist -->
+    <div class="playlist">
+        <h2>Playlist</h2>
+        <ul>
+            <li><a href="Bhool Bhulaiyaa Pritam.mp3" onclick="playSong('song1.mp3')">Song 1</a></li>
+            <li><a href="Chaleya Jawan.mp3" onclick="playSong('song2.mp3')">Song 2</a></li>
+            <li><a href="Not Ramayya Vastavayya.mp3" onclick="playSong('song3.mp3')">Song 3</a></li>
+            <!-- Add more songs as needed -->
+        </ul>
+    </div>
+
+    <script>
+        // JavaScript for controlling the music player
+        const audio = document.getElementById("audio");
+
+        function playSong(source) {
+            audio.src = source;
+            audio.load(); // Load the new audio source
+            audio.play(); // Play the new song
+        }
+    </script>
+</body>
+</html>
